@@ -1,5 +1,8 @@
 import chaos from 'chaosocket';
 
+const MIN_EXPIRE = 30000;
+const MAX_EXPIRE = 120000;
+
 chaos.register(faker => {
     return {
         id: faker.random.number({
@@ -9,7 +12,7 @@ chaos.register(faker => {
         type: 'text',
         title: faker.lorem.sentence(),
         text: faker.lorem.sentences(),
-        expires: faker.random.arrayElement([faker.random.number({ min: 30, max: 120 }), null])
+        expires: faker.random.arrayElement([faker.random.number({ min: MIN_EXPIRE, max: MAX_EXPIRE }), null])
     };
 }, 'low');
 
@@ -22,7 +25,7 @@ chaos.register(faker => {
         type: 'bonus',
         title: faker.lorem.sentence(),
         requirement: faker.lorem.sentences(),
-        expires: faker.random.arrayElement([faker.random.number({ min: 30, max: 120 }), null])
+        expires: faker.random.arrayElement([faker.random.number({ min: MIN_EXPIRE, max: MAX_EXPIRE }), null])
     };
 }, 'low');
 
@@ -36,7 +39,7 @@ chaos.register(faker => {
         image: faker.image.image(),
         title: faker.lorem.sentence(),
         link: faker.internet.url(),
-        expires: faker.random.arrayElement([faker.random.number({ min: 30, max: 120 }), null])
+        expires: faker.random.arrayElement([faker.random.number({ min: MIN_EXPIRE, max: MAX_EXPIRE }), null])
     };
 }, 'low');
 
