@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import './api';
 import './App.css';
+import NotificationsList from './components/NotificationsList/NotificationsList';
 
 class App extends Component {
-  componentDidMount() {
-    const socket = new WebSocket('ws://127.0.0.1:8888');
-
-    socket.onmessage = e => {
-      const msg = JSON.parse(e.data);
-    
-      console.log(msg);
-    };
-  }
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          
+      <React.Fragment>
+        <header className="app-header">
+          <div className="app-title">Notifications</div>
+          <NotificationsList />
         </header>
-      </div>
+        <div>
+          Some body of the page
+        </div>
+      </React.Fragment>
     );
   }
 }
