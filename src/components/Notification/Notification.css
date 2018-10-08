@@ -1,0 +1,38 @@
+.notification-wrapper {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.notification-wrapper > h4 {
+    margin: 0;
+}
+
+.notification-wrapper > p {
+    margin: 15px 0;
+}
+
+.notification-wrapper > hr {
+    margin: 0;
+}
+
+.promo-img {
+    width: 150px;
+    height: 150px;
+    margin: 15px 0;
+}
+
+.loading {
+    background: transparent url('../../loading_spinner.gif') center no-repeat;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+hr {
+    color: #dddfe2;
+}
+
+.notification-wrapper:hover {
+    background-color: lightblue;
+}

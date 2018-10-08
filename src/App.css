@@ -1,13 +1,20 @@
 .app-header {
-  background-color: #3B5998;
-  min-height: 100px;
+  background-color: #000;
+  height: 100px;
   display: grid;
   grid-template-columns: auto 100px;
-  font-size: calc(10px + 2vmin);
   color: white;
-  align-content: space-evenly;
 }
 
 .app-title {
   text-align: center;
+  margin: 31px 0;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.page-content {
+  display: grid;
+  background-color: #EFF3F6;
+  height: 100vh;
 }

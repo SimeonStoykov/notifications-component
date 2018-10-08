@@ -7,12 +7,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <header className="app-header">
-          <div className="app-title">Notifications</div>
+          <div className="app-title">Notifications Component</div>
           <NotificationsList />
         </header>
-        <div>
-          Some body of the page
-        </div>
+        <div className="page-content"></div>
       </React.Fragment>
     );
   }
