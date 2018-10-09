@@ -9,7 +9,6 @@
 }
 
 .notifications-list {
-    padding: 15px 20px;
     background-color: #fff;
     color: #000;
     overflow: auto;
@@ -28,7 +27,7 @@
 }
   
 .notifications-list::-webkit-scrollbar-thumb {
-    background: #21BB9A;
+    background: #6a98ee;
     border-radius: 4px;
 }
 
@@ -69,7 +68,7 @@
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #6A98EE;
+    border-bottom: 15px solid #6a98ee;
     position: relative;
     left: 309px;
 }
@@ -79,5 +78,5 @@
     color: #fff;
     height: 20px;
     text-transform: uppercase;
-    background-color: #6A98EE;
+    background-color: #6a98ee;
 }
