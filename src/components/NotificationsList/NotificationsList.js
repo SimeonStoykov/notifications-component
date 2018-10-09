@@ -3,6 +3,11 @@ import '../../api';
 import './NotificationsList.css';
 import Notification from '../Notification/Notification';
 
+import {
+    CSSTransition,
+    TransitionGroup
+} from 'react-transition-group';
+
 class NotificationsList extends Component {
     constructor(props) {
         super(props);
@@ -133,7 +138,7 @@ class NotificationsList extends Component {
             <div className="notifications">
                 <div className="notifications-icon" onClick={this.showHideList}>
                     <i className="fas fa-bell bell-icon"></i>
-                    { this.state.notificationsCount > 0 && <div className={notificationsCountClass}>{notificationsCountText}</div> }
+                    {this.state.notificationsCount > 0 && <div className={notificationsCountClass}>{notificationsCountText}</div>}
                 </div>
                 {
                     this.state.listIsVisible &&
@@ -141,11 +146,15 @@ class NotificationsList extends Component {
                         <div className="arrow-up"></div>
                         <div className="notifications-list-title">Notifications</div>
                         <div className="notifications-list">
-                            {
-                                this.state.notifications.map((el, index) => {
-                                    return <Notification key={index} notificationIndex={index} data={el} />
-                                })
-                            }
+                            <TransitionGroup>
+                                {
+                                    this.state.notifications.map((el, index) =>
+                                        <CSSTransition key={index} timeout={1000} classNames="animated-notification">
+                                            <Notification key={index} notificationIndex={index} data={el} />
+                                        </CSSTransition>
+                                    )
+                                }
+                            </TransitionGroup>
                         </div>
                     </div>
                 }

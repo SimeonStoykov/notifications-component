@@ -6,14 +6,30 @@
     position: relative;
     right: 300px;
     width: 350px;
+    height: 300px;
+
+    -webkit-animation-name: popup-animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: popup-animation;
+    animation-duration: 500ms;
+}
+
+@-webkit-keyframes popup-animation {
+    from { height: 0; }
+    to { height: 300px; }
+}
+
+@keyframes popup-animation {
+    from { height: 0; }
+    to { height: 300px; }
 }
 
 .notifications-list {
     background-color: #fff;
     color: #000;
     overflow: auto;
+    height: 100%;
     border: 1px solid #C4C5C9;
-    height: 300px;
     -webkit-box-shadow: 0px 4px 10px 2px rgba(213,214,218,1);
     -moz-box-shadow: 0px 4px 10px 2px rgba(213,214,218,1);
     box-shadow: 0px 4px 10px 2px rgba(213,214,218,1);
@@ -79,4 +95,24 @@
     height: 20px;
     text-transform: uppercase;
     background-color: #6a98ee;
+}
+
+.animated-notification-enter {
+    opacity: 0.01;
+}
+  
+.animated-notification-enter.animated-notification-enter-active {
+    opacity: 1;
+    background-color: lightgreen;
+    transition: opacity 1s ease-in;
+}
+  
+.animated-notification-exit {
+    opacity: 1;
+    background-color: #E54C2D;
+}
+  
+.animated-notification-exit.animated-notification-exit-active {
+    opacity: 0.01;
+    transition: opacity 1s ease-in;
 }
