@@ -46,7 +46,7 @@ class NotificationsList extends Component {
                     if (indexOfNotification !== -1) {
                         notifications[indexOfNotification] = Object.assign(notifications[indexOfNotification], newNotification);
                     } else { // The notification is new and we add it
-                        notifications.push(newNotification);
+                        notifications.unshift(newNotification);
                         notificationsCount = newNotification.type !== 'bonus' ? notificationsCount + 1 : notificationsCount;
                     }
 
@@ -151,6 +151,7 @@ class NotificationsList extends Component {
     }
 
     render() {
+        console.log('NOTIFICATIONS');
         console.log(this.state.notifications);
         let notificationsCountText = this.state.notificationsCount.toString();
         let notificationsCountClass = 'notifications-count';
@@ -174,9 +175,9 @@ class NotificationsList extends Component {
                         <div className="notifications-list">
                             <TransitionGroup>
                                 {
-                                    this.state.notifications.map((el, index) =>
-                                        <CSSTransition key={index} timeout={1000} classNames="animated-notification">
-                                            <Notification key={index} notificationIndex={index} data={el} />
+                                    this.state.notifications.map(el =>
+                                        <CSSTransition key={el.id} timeout={1000} classNames="animated-notification">
+                                            <Notification key={el.id} data={el} />
                                         </CSSTransition>
                                     )
                                 }
