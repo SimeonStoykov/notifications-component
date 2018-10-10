@@ -8,18 +8,18 @@
     width: 350px;
     height: 300px;
 
-    -webkit-animation-name: popup-animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: open-popup-animation; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: popup-animation;
+    animation-name: open-popup-animation;
     animation-duration: 500ms;
 }
 
-@-webkit-keyframes popup-animation {
+@-webkit-keyframes open-popup-animation {
     from { height: 0; }
     to { height: 300px; }
 }
 
-@keyframes popup-animation {
+@keyframes open-popup-animation {
     from { height: 0; }
     to { height: 300px; }
 }

@@ -7,7 +7,7 @@ chaos.register(faker => {
     return {
         id: faker.random.number({
             min: 1,
-            max: 3
+            max: 20
         }),
         type: 'text',
         title: faker.lorem.sentence(),
@@ -47,7 +47,7 @@ chaos.register(faker => {
     return {
         id: faker.random.number({
             min: 1,
-            max: 3
+            max: 60
         }),
         type: 'remove-notification'
     };

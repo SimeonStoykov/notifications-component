@@ -14,6 +14,9 @@ class NotificationsList extends Component {
 
         this.showHideList = this.showHideList.bind(this);
         this.startNotificationExpireTimeout = this.startNotificationExpireTimeout.bind(this);
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleOutsidePopupClick = this.handleOutsidePopupClick.bind(this);
+        this.handleEscPress = this.handleEscPress.bind(this);
     }
 
     state = {
@@ -24,6 +27,8 @@ class NotificationsList extends Component {
     }
 
     componentDidMount() {
+        document.addEventListener('mousedown', this.handleOutsidePopupClick);
+        document.addEventListener('keydown', this.handleEscPress);
         const socket = new WebSocket('ws://127.0.0.1:8888');
 
         socket.onmessage = e => {
@@ -90,8 +95,29 @@ class NotificationsList extends Component {
         };
     }
 
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleOutsidePopupClick);
+    }
+
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+
     showHideList() {
         this.setState(prevState => ({ listIsVisible: !prevState.listIsVisible }));
+    }
+
+    handleOutsidePopupClick(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.setState({ listIsVisible: false });
+        }
+    }
+
+    handleEscPress(event) {
+        if (event.key === 'Escape') {
+            this.setState({ listIsVisible: false });
+        }
     }
 
     startNotificationExpireTimeout(newNotification) {
@@ -135,7 +161,7 @@ class NotificationsList extends Component {
         }
 
         return (
-            <div className="notifications">
+            <div className="notifications" ref={this.setWrapperRef}>
                 <div className="notifications-icon" onClick={this.showHideList}>
                     <i className="fas fa-bell bell-icon"></i>
                     {this.state.notificationsCount > 0 && <div className={notificationsCountClass}>{notificationsCountText}</div>}
