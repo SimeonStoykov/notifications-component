@@ -150,6 +150,30 @@ class NotificationsList extends Component {
         });
     }
 
+    getNotificationsList() {
+        if (this.state.notifications.length === 0) {
+            return (
+                <TransitionGroup>
+                    <CSSTransition timeout={0} classNames="animated-no-notifications">
+                        <div className="no-notifications">There are no notifications!</div>
+                    </CSSTransition>
+                </TransitionGroup>
+            )
+        }
+
+        return (
+            <TransitionGroup>
+                {
+                    this.state.notifications.map(el =>
+                        <CSSTransition key={el.id} timeout={1000} classNames="animated-notification">
+                            <Notification key={el.id} data={el} />
+                        </CSSTransition>
+                    )
+                }
+            </TransitionGroup>
+        );
+    }
+
     render() {
         console.log('NOTIFICATIONS');
         console.log(this.state.notifications);
@@ -173,15 +197,7 @@ class NotificationsList extends Component {
                         <div className="arrow-up"></div>
                         <div className="notifications-list-title">Notifications</div>
                         <div className="notifications-list">
-                            <TransitionGroup>
-                                {
-                                    this.state.notifications.map(el =>
-                                        <CSSTransition key={el.id} timeout={1000} classNames="animated-notification">
-                                            <Notification key={el.id} data={el} />
-                                        </CSSTransition>
-                                    )
-                                }
-                            </TransitionGroup>
+                            {this.getNotificationsList()}
                         </div>
                     </div>
                 }

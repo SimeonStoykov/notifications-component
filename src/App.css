@@ -21,14 +21,20 @@
   height: 100vh;
 }
 
+@media only screen and (min-width: 461px)  and (max-width: 780px) {
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
+
 @media only screen and (max-width: 460px) {
   .app-title {
     font-size: 1.25rem;
   }
 }
 
-@media only screen and (min-width: 461px)  and (max-width: 780px) {
+@media only screen and (max-width: 359px) {
   .app-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }

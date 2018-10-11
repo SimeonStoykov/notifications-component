@@ -34,3 +34,10 @@
 .notification-wrapper:hover {
     background-color: #dfe3e6;
 }
+
+@media only screen and (max-width: 460px) {
+    .promo-img {
+        width: 120px;
+        height: 120px;
+    }
+}
