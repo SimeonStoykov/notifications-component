@@ -22,7 +22,7 @@ class NotificationsList extends Component {
     state = {
         notifications: [],
         notificationsCount: 0,
-        listIsVisible: false,
+        listIsVisible: undefined,
         startedTimeouts: []
     }
 
@@ -109,13 +109,13 @@ class NotificationsList extends Component {
     }
 
     handleOutsidePopupClick(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.state.listIsVisible) {
             this.setState({ listIsVisible: false });
         }
     }
 
     handleEscPress(event) {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && this.state.listIsVisible) {
             this.setState({ listIsVisible: false });
         }
     }
@@ -168,8 +168,8 @@ class NotificationsList extends Component {
                     {this.state.notificationsCount > 0 && <div className={notificationsCountClass}>{notificationsCountText}</div>}
                 </div>
                 {
-                    this.state.listIsVisible &&
-                    <div className="notifications-list-popup">
+                    this.state.listIsVisible !== undefined &&
+                    <div className={this.state.listIsVisible ? 'notifications-list-popup' : 'notifications-list-popup-closed'}>
                         <div className="arrow-up"></div>
                         <div className="notifications-list-title">Notifications</div>
                         <div className="notifications-list">
