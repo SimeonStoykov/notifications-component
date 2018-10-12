@@ -3,14 +3,18 @@
   "version": "0.0.1",
   "author": "Simeon Stoykov",
   "private": true,
+  "homepage": "https://simeonstoykov.github.io/notifications-component",
   "dependencies": {
     "chaosocket": "^0.1.1",
+    "gh-pages": "^2.0.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4",
     "react-transition-group": "^2.5.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
