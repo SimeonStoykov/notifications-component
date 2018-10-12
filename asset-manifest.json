@@ -1,0 +1,14 @@
+{
+  "main.css": "/notifications-component/static/css/main.7181c18e.chunk.css",
+  "main.js": "/notifications-component/static/js/main.b1a453b8.chunk.js",
+  "main.js.map": "/notifications-component/static/js/main.b1a453b8.chunk.js.map",
+  "static/js/1.db398a02.chunk.js": "/notifications-component/static/js/1.db398a02.chunk.js",
+  "static/js/1.db398a02.chunk.js.map": "/notifications-component/static/js/1.db398a02.chunk.js.map",
+  "runtime~main.js": "/notifications-component/static/js/runtime~main.0c93783d.js",
+  "runtime~main.js.map": "/notifications-component/static/js/runtime~main.0c93783d.js.map",
+  "static/media/Notification.css": "/notifications-component/static/media/spinner.c539cb21.svg",
+  "static/css/main.7181c18e.chunk.css.map": "/notifications-component/static/css/main.7181c18e.chunk.css.map",
+  "index.html": "/notifications-component/index.html",
+  "precache-manifest.64ae2aa727357e9ba1aac663572fbd35.js": "/notifications-component/precache-manifest.64ae2aa727357e9ba1aac663572fbd35.js",
+  "service-worker.js": "/notifications-component/service-worker.js"
+}
