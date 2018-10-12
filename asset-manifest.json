@@ -1,14 +1,14 @@
 {
-  "main.css": "/notifications-component/static/css/main.f7b4277c.chunk.css",
-  "main.js": "/notifications-component/static/js/main.69be78a9.chunk.js",
-  "main.js.map": "/notifications-component/static/js/main.69be78a9.chunk.js.map",
+  "main.css": "/notifications-component/static/css/main.03e8c5b5.chunk.css",
+  "main.js": "/notifications-component/static/js/main.f6118de6.chunk.js",
+  "main.js.map": "/notifications-component/static/js/main.f6118de6.chunk.js.map",
   "static/js/1.7779363d.chunk.js": "/notifications-component/static/js/1.7779363d.chunk.js",
   "static/js/1.7779363d.chunk.js.map": "/notifications-component/static/js/1.7779363d.chunk.js.map",
   "runtime~main.js": "/notifications-component/static/js/runtime~main.0c93783d.js",
   "runtime~main.js.map": "/notifications-component/static/js/runtime~main.0c93783d.js.map",
   "static/media/Notification.css": "/notifications-component/static/media/spinner.c539cb21.svg",
-  "static/css/main.f7b4277c.chunk.css.map": "/notifications-component/static/css/main.f7b4277c.chunk.css.map",
+  "static/css/main.03e8c5b5.chunk.css.map": "/notifications-component/static/css/main.03e8c5b5.chunk.css.map",
   "index.html": "/notifications-component/index.html",
-  "precache-manifest.995f0595b96f95ece1ef5df71181153e.js": "/notifications-component/precache-manifest.995f0595b96f95ece1ef5df71181153e.js",
+  "precache-manifest.a6ce1558592cda0877aa638f401c6d7c.js": "/notifications-component/precache-manifest.a6ce1558592cda0877aa638f401c6d7c.js",
   "service-worker.js": "/notifications-component/service-worker.js"
 }
