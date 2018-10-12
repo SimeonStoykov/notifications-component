@@ -186,6 +186,10 @@
     .no-notifications {
         font-size: 14px;
     }
+
+    .notifications-list {
+        height: calc(100% - 57px);
+    }
 }
 
 @media only screen and (min-width: 360px) and (max-width: 460px) {

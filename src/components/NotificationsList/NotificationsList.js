@@ -34,8 +34,6 @@ class NotificationsList extends Component {
         socket.onmessage = e => {
             const newNotification = JSON.parse(e.data);
 
-            console.log(newNotification);
-
             if (newNotification.type !== 'remove-notification') {
                 this.setState(prevState => {
                     let notifications = [...prevState.notifications];
@@ -175,8 +173,6 @@ class NotificationsList extends Component {
     }
 
     render() {
-        console.log('NOTIFICATIONS');
-        console.log(this.state.notifications);
         let notificationsCountText = this.state.notificationsCount.toString();
         let notificationsCountClass = 'notifications-count';
 
@@ -188,7 +184,7 @@ class NotificationsList extends Component {
         return (
             <div className="notifications" ref={this.setWrapperRef}>
                 <div className="notifications-icon" onClick={this.showHideList}>
-                    <i className="fas fa-bell bell-icon"></i>
+                    <i className="fa fa-bell bell-icon"></i>
                     {this.state.notificationsCount > 0 && <div className={notificationsCountClass}>{notificationsCountText}</div>}
                 </div>
                 {
